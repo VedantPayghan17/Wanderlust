@@ -1,0 +1,33 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row-5 mt-5 ">
+        <div class="col-4 offset-4">
+        <form method="post" action="/signin" class="needs-validation" novalidate>
+            <% if (typeof error !== 'undefined' && error.length) { %>
+                <div class="alert alert-danger" role="alert"><%= error[0] %></div>
+            <% } %>
+            <div class="mb-3">
+                <h2 style="color: green; font-weight: 600;">Signin </h2>
+                <label for="username" class="form-label">Username</label>
+                <input 
+                    type="text"
+                    id="username"
+                    name="username"
+                    class="form-control"
+                    required
+                />
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input 
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-control"
+                    required
+                />
+            </div>
+            
+                <button class="btn btn-sucess"> Signin</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust</title>
+    <link rel="shortcut icon" href="" type="image/x-icon">
+</head> -->
+<%- layout("/layouts/boilerplate") %>
+
+    <body>
+        <h2>All Listings</h2>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xs-1"> 
+            <% for(list of listings ){%>
+                <a href="/listings/<%= list._id %>" class="listings-link"> 
+                <div class="card col style="width: 20px;">
+                    <img src="<%= list.listingimage %>" class="card-img-top" alt="<%= list.title %>" width="100px" height="200px">
+                    <div class="card-body">
+                        <p class="card-text"><b>
+                                <%= list.title %>
+                            </b><br>Price : &#8377;<%= list.price.toLocaleString("en-IN") %> /night<br>
+                                <%= list.location %>, <%= list.country %>
+                        </p>
+
+
+                    </div>
+                </div>
+                </a>
+                <% } %>
+        </div>
+    </body>
+    <!-- </html> -->
